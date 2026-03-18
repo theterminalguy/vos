@@ -31,9 +31,25 @@ pub enum VosError {
     #[error("Kernel error: {0}")]
     Kernel(#[from] KernelError),
 
+    /// Assembler errors
+    #[error("Assembler error: {0}")]
+    Assembler(String),
+
     /// Generic error with message
     #[error("{0}")]
     Generic(String),
+}
+
+impl From<String> for VosError {
+    fn from(s: String) -> Self {
+        VosError::Generic(s)
+    }
+}
+
+impl From<&str> for VosError {
+    fn from(s: &str) -> Self {
+        VosError::Generic(s.to_string())
+    }
 }
 
 /// CPU-specific errors.

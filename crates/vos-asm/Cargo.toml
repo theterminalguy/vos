@@ -7,3 +7,6 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
+vos-core.workspace = true
+vos-cpu.workspace = true
+thiserror.workspace = true
