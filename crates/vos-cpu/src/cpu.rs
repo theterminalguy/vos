@@ -396,7 +396,7 @@ impl Inspectable for Cpu {
         let mut output = String::new();
         output.push_str(&format!("CPU State (Instructions: {})\n", self.instruction_count));
         output.push_str(&format!("Halted: {}\n", self.halted));
-        output.push_str("\n");
+        output.push('\n');
         output.push_str(&self.registers.dump());
         output
     }

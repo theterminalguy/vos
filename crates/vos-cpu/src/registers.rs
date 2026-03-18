@@ -55,7 +55,7 @@ pub struct Registers {
 ///
 /// These flags are set by arithmetic and comparison operations
 /// and used by conditional branch instructions.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, Default)]
 pub struct Flags {
     /// Zero flag: Set when result is zero
     pub zero: bool,
@@ -68,17 +68,6 @@ pub struct Flags {
 
     /// Overflow flag: Set when signed overflow occurs
     pub overflow: bool,
-}
-
-impl Default for Flags {
-    fn default() -> Self {
-        Self {
-            zero: false,
-            negative: false,
-            carry: false,
-            overflow: false,
-        }
-    }
 }
 
 impl Flags {
