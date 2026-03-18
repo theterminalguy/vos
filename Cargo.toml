@@ -1,0 +1,59 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/vos-core",
+    "crates/vos-cpu",
+    "crates/vos-memory",
+    "crates/vos-io",
+    "crates/vos-hardware",
+    "crates/vos-kernel",
+    "crates/vos-lang",
+    "crates/vos-asm",
+    "crates/vos-userspace",
+    "crates/vos-debugger",
+    "crates/vos-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Simon Peter Damian"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/[username]/vos"
+
+[workspace.dependencies]
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# CLI
+clap = { version = "4.0", features = ["derive"] }
+rustyline = "12.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Testing
+proptest = "1.0"
+criterion = "0.5"
+
+# Parsing (for vos-lang)
+logos = "0.13"
+chumsky = "0.9"
+
+# Internal dependencies
+vos-core = { path = "crates/vos-core" }
+vos-cpu = { path = "crates/vos-cpu" }
+vos-memory = { path = "crates/vos-memory" }
+vos-io = { path = "crates/vos-io" }
+vos-hardware = { path = "crates/vos-hardware" }
+vos-kernel = { path = "crates/vos-kernel" }
+vos-lang = { path = "crates/vos-lang" }
+vos-asm = { path = "crates/vos-asm" }
+vos-userspace = { path = "crates/vos-userspace" }
+vos-debugger = { path = "crates/vos-debugger" }
