@@ -100,7 +100,10 @@ impl AddressRange {
     /// assert_eq!(kernel_space.size(), 0x00200000);
     /// ```
     pub fn new(start: Address, end: Address) -> Self {
-        assert!(start < end, "Invalid address range: start must be less than end");
+        assert!(
+            start < end,
+            "Invalid address range: start must be less than end"
+        );
         Self { start, end }
     }
 
@@ -232,7 +235,15 @@ pub mod memory_regions {
     /// assert!(region.is_some());
     /// ```
     pub fn get_region(address: Address) -> Option<AddressRange> {
-        let regions = [IVT, KERNEL_CODE, KERNEL_STACK, USER_SPACE, HEAP, MMIO, RESERVED];
+        let regions = [
+            IVT,
+            KERNEL_CODE,
+            KERNEL_STACK,
+            USER_SPACE,
+            HEAP,
+            MMIO,
+            RESERVED,
+        ];
         regions.iter().find(|r| r.contains(address)).copied()
     }
 }
