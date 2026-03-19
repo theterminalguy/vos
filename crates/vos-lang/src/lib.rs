@@ -4,6 +4,8 @@
 
 pub mod token;
 pub mod lexer;
+pub mod ast;
 
 pub use token::{Token, TokenKind};
 pub use lexer::Lexer;
+pub use ast::{Program, Statement, Expression};
