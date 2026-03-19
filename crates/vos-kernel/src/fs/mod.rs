@@ -10,6 +10,6 @@ pub mod vfs;
 
 pub use inode::{Inode, InodeType};
 pub use directory::{Directory, DirectoryEntry};
-pub use file::File;
+pub use file::{File, OpenMode};
 pub use simple_fs::SimpleFs;
 pub use vfs::{Vfs, VfsError};

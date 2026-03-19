@@ -35,7 +35,7 @@ pub mod scheduler;
 pub mod syscall;
 
 pub use boot::boot_kernel;
-pub use fs::{Vfs, VfsError};
+pub use fs::{OpenMode, Vfs, VfsError};
 pub use process::{Process, ProcessId, ProcessState};
 pub use scheduler::Scheduler;
 pub use syscall::{Syscall, SyscallHandler};
