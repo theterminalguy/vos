@@ -1,14 +1,9 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+//! VOS Script Language - Compiler and interpreter for vos script.
+//!
+//! A simple TypeScript/Ruby-like scripting language for VOS.
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub mod token;
+pub mod lexer;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use token::{Token, TokenKind};
+pub use lexer::Lexer;

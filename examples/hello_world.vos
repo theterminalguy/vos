@@ -1,0 +1,6 @@
+// Hello World program in vos script
+
+fn main() -> int {
+    print("Hello, VOS!")
+    return 0
+}

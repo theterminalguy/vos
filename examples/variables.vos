@@ -1,0 +1,26 @@
+// Variable declarations and expressions
+
+fn main() -> int {
+    // Integer variables
+    let x: int = 42
+    let y = 10  // Type inference
+
+    // Arithmetic
+    let sum = x + y
+    let product = x * y
+
+    // Booleans
+    let is_true = true
+    let is_false = false
+
+    // Comparison
+    let greater = x > y
+
+    // Strings
+    let message = "Hello, VOS!"
+
+    // Constants
+    const PI = 3.14159
+
+    return 0
+}
