@@ -1,14 +1,39 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+//! VOS Kernel - Operating system kernel for VOS.
+//!
+//! Provides core OS functionality:
+//! - Process management and scheduling
+//! - System calls
+//! - Boot sequence
+//! - User/kernel mode separation
+//!
+//! # Architecture
+//!
+//! ```text
+//! User Programs
+//!      |
+//!      | (system calls)
+//!      ▼
+//! ┌─────────────────────────┐
+//! │    System Call Layer    │
+//! └─────────────────────────┘
+//!      |
+//!      ▼
+//! ┌─────────────────────────┐
+//! │   Process Scheduler     │
+//! └─────────────────────────┘
+//!      |
+//!      ▼
+//! ┌─────────────────────────┐
+//! │    Process Manager      │
+//! └─────────────────────────┘
+//! ```
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub mod boot;
+pub mod process;
+pub mod scheduler;
+pub mod syscall;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use boot::boot_kernel;
+pub use process::{Process, ProcessId, ProcessState};
+pub use scheduler::Scheduler;
+pub use syscall::{Syscall, SyscallHandler};
