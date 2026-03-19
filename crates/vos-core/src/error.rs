@@ -31,6 +31,10 @@ pub enum VosError {
     #[error("Kernel error: {0}")]
     Kernel(#[from] KernelError),
 
+    /// Filesystem errors
+    #[error("Filesystem error: {0}")]
+    Filesystem(String),
+
     /// Assembler errors
     #[error("Assembler error: {0}")]
     Assembler(String),

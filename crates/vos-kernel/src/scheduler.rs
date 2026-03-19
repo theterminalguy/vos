@@ -214,7 +214,7 @@ mod tests {
     fn test_round_robin() {
         let mut scheduler = Scheduler::new();
 
-        let _pid1 = scheduler.create_process(0x1000, 0x10000, 0x1000);
+        let pid1 = scheduler.create_process(0x1000, 0x10000, 0x1000);
         let pid2 = scheduler.create_process(0x2000, 0x20000, 0x1000);
         let pid3 = scheduler.create_process(0x3000, 0x30000, 0x1000);
 
@@ -247,7 +247,7 @@ mod tests {
     fn test_terminate_current() {
         let mut scheduler = Scheduler::new();
 
-        let pid1 = scheduler.create_process(0x1000, 0x10000, 0x1000);
+        let _pid1 = scheduler.create_process(0x1000, 0x10000, 0x1000);
         let pid2 = scheduler.create_process(0x2000, 0x20000, 0x1000);
 
         scheduler.schedule(); // Start pid1
