@@ -144,16 +144,17 @@ vos/
 │   ├── vos-lang/              # vos script language (9 tests)
 │   ├── vos-userspace/         # Shell and programs (20 tests)
 │   └── vos-cli/               # Main CLI application
-├── tutorials/                 # Tutorial chapters
+├── docs/                      # Documentation
+│   └── beginners-guide/       # Beginner-friendly tutorials
+│       ├── README.md
+│       ├── 01-hello-vos.md
+│       ├── 02-exploring-the-computer.md
+│       └── 03-files-deep-dive.md
+├── tutorials-technical/       # Advanced technical tutorials (10 chapters)
+│   ├── README.md
 │   ├── chapter-01-introduction.md
 │   ├── chapter-02-cpu-basics.md
-│   ├── chapter-03-memory.md
-│   ├── chapter-04-io-devices.md
-│   ├── chapter-05-assembler-debugger.md
-│   ├── chapter-06-kernel-fundamentals.md
-│   ├── chapter-07-filesystem.md
-│   ├── chapter-08-shell.md
-│   ├── chapter-09-vos-script.md
+│   ├── ... (through chapter 10)
 │   └── chapter-10-applications.md
 ├── examples/                  # Example programs
 │   ├── asm/                   # Assembly examples
@@ -165,7 +166,7 @@ vos/
 │   ├── calculator.vos
 │   ├── loops.vos
 │   └── variables.vos
-└── docs/                      # Additional documentation
+└── QUICKSTART.md              # 5-minute getting started guide
 ```
 
 ## 🚀 Getting Started
@@ -225,10 +226,38 @@ file.txt  (inode 2)
 vos> exit
 ```
 
-## 📚 Tutorials
+## 📚 Learning Paths
 
-The project includes 10 comprehensive tutorial chapters (~8,000 lines):
+VOS provides multiple learning paths depending on your background and goals:
 
+### 🚀 Quick Start (5 minutes)
+**Just want to try it out?**
+- **[QUICKSTART.md](QUICKSTART.md)** - Get VOS running in 5 minutes
+- Basic commands and first challenges
+- Perfect for: Everyone starting with VOS
+
+### 🎓 Beginner's Guide (For Newcomers)
+**New to computer science or command line?**
+- **[Beginner's Guide](docs/beginners-guide/README.md)** - Interactive, visual, hands-on learning
+- Friendly explanations with lots of diagrams
+- No prior CS knowledge needed
+- Progressive difficulty with practice challenges
+- Perfect for: Students, self-learners, anyone curious about how computers work
+
+**Chapters:**
+- Chapter 1: Hello, VOS! (15 min)
+- Chapter 2: Exploring the Computer (20 min)
+- Chapter 3: Files and Folders Deep Dive (25 min)
+- More chapters coming soon!
+
+### 📖 Technical Tutorials (For CS Students)
+**Want deep technical understanding?**
+- **[Technical Tutorials](tutorials-technical/README.md)** - Comprehensive, in-depth coverage
+- 10 detailed chapters (~8,000 lines)
+- OS theory and implementation details
+- Perfect for: CS students, software engineers, advanced learners
+
+**Chapters:**
 | Chapter | Topic | Lines |
 |---------|-------|-------|
 | 1 | Introduction | ~400 |
@@ -242,14 +271,24 @@ The project includes 10 comprehensive tutorial chapters (~8,000 lines):
 | 9 | vos script Language | ~801 |
 | 10 | Building Applications | ~794 |
 
-**Start here:** [tutorials/chapter-01-introduction.md](tutorials/chapter-01-introduction.md)
+### 🗺️ Which Path Should You Take?
 
-Each chapter includes:
-- Learning objectives
-- Concept explanations
-- Code walkthroughs
-- Hands-on exercises
-- Challenge problems
+```
+┌─────────────────────────────────────────┐
+│  Are you new to programming/CS?         │
+│  ┌───────┐           ┌────────┐         │
+│  │  YES  │           │   NO   │         │
+│  └───┬───┘           └────┬───┘         │
+│      │                    │             │
+│      ↓                    ↓             │
+│  Beginner's          Technical         │
+│    Guide             Tutorials         │
+│                                         │
+│  (Start here!)    (Deep dive here!)    │
+└─────────────────────────────────────────┘
+```
+
+**Everyone starts with:** [QUICKSTART.md](QUICKSTART.md) to get VOS running!
 
 ## 🧪 Development
 
@@ -292,13 +331,21 @@ cargo clippy
 cargo doc --open
 ```
 
-## 🎓 Learning Path
+## 🎓 Recommended Learning Path
 
-1. **Start with Tutorials**: Read Chapter 1 for overview
-2. **Follow Along**: Chapters 2-4 cover hardware (CPU, Memory, I/O)
-3. **Build Understanding**: Chapters 5-7 cover system software
-4. **Explore Applications**: Chapters 8-10 cover userspace
-5. **Experiment**: Modify the code, add features, break things!
+### For Beginners
+1. **Get Started**: [QUICKSTART.md](QUICKSTART.md) - Get VOS running (5 min)
+2. **Learn Basics**: [Beginner's Guide Chapter 1](docs/beginners-guide/01-hello-vos.md) - First commands
+3. **Understand Internals**: Work through [Beginner's Guide](docs/beginners-guide/README.md) chapters
+4. **Experiment**: Try the challenges, break things, learn by doing!
+
+### For CS Students / Advanced Learners
+1. **Get Started**: [QUICKSTART.md](QUICKSTART.md) - Get VOS running (5 min)
+2. **Deep Dive**: [Technical Tutorials Chapter 1](tutorials-technical/chapter-01-introduction.md)
+3. **Follow Along**: Chapters 2-4 cover hardware (CPU, Memory, I/O)
+4. **Build Understanding**: Chapters 5-7 cover system software
+5. **Explore Applications**: Chapters 8-10 cover userspace
+6. **Experiment**: Modify the code, add features, break things!
 
 ## 📊 Project Statistics
 
@@ -443,7 +490,9 @@ VOS is a fully functional virtual operating system with:
 - Example applications
 - Comprehensive tutorials
 
-Start learning today with [Chapter 1: Introduction](tutorials/chapter-01-introduction.md)!
+**Start learning today:**
+- New to CS? → [Beginner's Guide](docs/beginners-guide/README.md)
+- Want depth? → [Technical Tutorials](tutorials-technical/README.md)
 
 ---
 
